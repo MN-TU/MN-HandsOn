@@ -9,14 +9,22 @@
 </head>
 <body>
   <header>
-    <h1>Recycling Info Guide</h1>
+    <!-- Navigation Bar with Language Switcher -->
+    <nav>
+      <ul>
+        <li><button id="lang-en">English</button></li>
+        <li><button id="lang-zh">中文</button></li>
+      </ul>
+    </nav>
+
+    <h1 id="page-title">Recycling Info Guide</h1>
     <img src="images/Recycling.png">
-    <p>Find out which items are recyclable!</p>
+    <p id="intro-text">Find out which items are recyclable!</p>
   </header>
 
   <section class="content">
     <div class="dropdown-section">
-      <label for="item-select">Select an item to check if it's recyclable:</label>
+      <label for="item-select" id="dropdown-label">Select an item to check if it's recyclable:</label>
       <select id="item-select">
         <option value="">--Select an item--</option>
         <option value="paper">Paper</option>
@@ -25,13 +33,12 @@
         <option value="metal">Metal</option>
         <option value="organic">Organic waste</option>
         <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing</option>
       </select>
       <div id="recycling-info"></div>
     </div>
 
     <div class="infographic">
-      <h2>Recyclable Materials Guide</h2>
+      <h2 id="guide-title">Recyclable Materials Guide</h2>
       <img src="recycling-infographic.jpg" alt="Recycling Infographic">
     </div>
   </section>

@@ -1,72 +1,49 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    background-image: url(images/Recycling\ basics.png);
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  .content {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .dropdown-section {
-    width: 45%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .infographic {
-    width: 45%;
-    text-align: center;
-  }
-  
-  select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  #recycling-info {
-    margin-top: 15px;
-    font-size: 18px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .infographic img {
-    width: 100%;  /* Makes the image stretch to fit the container */
-    max-width: 600px;  /* Limits the width to 600px */
-    height: auto;  /* Maintains aspect ratio */
-    display: block;
-    margin: 20px auto;
-  }
-    
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  background-image: url(images/Recycling\ basics.png);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;  /* Ensures the body covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-grow: 1;  /* Ensures content area expands to fill available space */
+}
+
+.dropdown-section {
+  width: 45%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infographic {
+  width: 45%;
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 
