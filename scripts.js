@@ -15,15 +15,33 @@ document.addEventListener('DOMContentLoaded', function () {
           pageTitle: "Recycling Info Guide",
           introText: "Find out which items are recyclable!",
           dropdownLabel: "Select an item to check if it's recyclable:",
-          guideTitle: "Recyclable Materials Guide"
+          guideTitle: "Recyclable Materials Guide",
+          dropdownPlaceholder: "--Select an item--",
+          dropdownItems: {
+            paper: "Paper",
+            plastic: "Plastic",
+            glass: "Glass",
+            metal: "Metal",
+            organic: "Organic waste",
+            electronics: "Electronics"
+        }
       },
       zh: {
           pageTitle: "回收信息指南",
           introText: "了解哪些物品可以回收！",
           dropdownLabel: "选择一个物品以检查它是否可以回收：",
-          guideTitle: "可回收材料指南"
-      }
-  };
+          guideTitle: "可回收材料指南",
+          dropdownPlaceholder: "--选择一个物品--", 
+          dropdownItems: {
+            paper: "纸",
+            plastic: "塑料",
+            glass: "玻璃",
+            metal: "金属",
+            organic: "有机废物",
+            electronics: "电子产品"
+            }
+        }
+     };
 
   // Translations for recyclable items
   const recyclableData = {
@@ -57,19 +75,35 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateLanguage(lang) {
       currentLanguage = lang;
 
-      // Update static page elements
-      pageElements.pageTitle.textContent = translations[lang].pageTitle;
-      pageElements.introText.textContent = translations[lang].introText;
-      pageElements.dropdownLabel.textContent = translations[lang].dropdownLabel;
-      pageElements.guideTitle.textContent = translations[lang].guideTitle;
+        // Update static page elements
+        pageElements.pageTitle.textContent = translations[lang].pageTitle;
+        pageElements.introText.textContent = translations[lang].introText;
+        pageElements.dropdownLabel.textContent = translations[lang].dropdownLabel;
+        pageElements.guideTitle.textContent = translations[lang].guideTitle;
 
-      // Update item description if an item is already selected
-      const selectedItem = itemSelect.value;
-      if (selectedItem) {
-          recyclingInfo.textContent = recyclableData[selectedItem][lang] || "Information not available.";
-      } else {
-          recyclingInfo.textContent = "";
-      }
+        // Update dropdown placeholder
+        itemSelect.options[0].textContent = translations[lang].dropdownPlaceholder;
+
+        // Update dropdown items
+        const dropdownItems = translations[lang].dropdownItems;
+        itemSelect.options[1].textContent = dropdownItems.paper;
+        itemSelect.options[2].textContent = dropdownItems.plastic;
+        itemSelect.options[3].textContent = dropdownItems.glass;
+        itemSelect.options[4].textContent = dropdownItems.metal;
+        itemSelect.options[5].textContent = dropdownItems.organic;
+        itemSelect.options[6].textContent = dropdownItems.electronics;
+
+        // Update item description if an item is already selected
+        const selectedItem = itemSelect.value;
+        if (selectedItem) {
+            recyclingInfo.textContent = recyclableData[selectedItem][lang] || "Information not available.";
+        } else {
+            recyclingInfo.textContent = "";
+        }
+
+        // Update language button styles
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
   }
 
   // Event listeners for language buttons
