@@ -6,47 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Recycling Info Guide</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <!-- Navigation Bar with Language Switcher -->
-    <nav>
-      <ul>
-        <li><button id="lang-en">English Language</button></li>
-        <li><button id="lang-zh">中文中文</button></li>
-      </ul>
-    </nav>
+  <div class="container">
+    <header class="main-header">
+      <nav class="language-nav">
+        <button id="lang-en" class="lang-btn active">English</button>
+        <button id="lang-zh" class="lang-btn">中文</button>
+      </nav>
+      <div class="header-content">
+        <h1 id="page-title" class="main-title">Recycling Info Guide</h1>
+        <img src="images/recycling-logo.png" alt="Recycling Logo" class="header-image">
+        <p id="intro-text" class="intro">Find out which items are recyclable!</p>
+      </div>
+    </header>
 
-    <h1 id="page-title">Recycling Info Guide</h1>
-    <img src="images/Recycling.png">
-    <p id="intro-text">Find out which items are recyclable!</p>
-  </header>
+    <main class="content">
+      <div class="dropdown-section card">
+        <label for="item-select" id="dropdown-label" class="dropdown-label">Select an item to check if it's recyclable:</label>
+        <select id="item-select" class="item-dropdown">
+          <option value="">--Select an item--</option>
+          <option value="paper">Paper</option>
+          <option value="plastic">Plastic</option>
+          <option value="glass">Glass</option>
+          <option value="metal">Metal</option>
+          <option value="organic">Organic waste</option>
+          <option value="electronics">Electronics</option>
+        </select>
+        <div id="recycling-info" class="info-text"></div>
+      </div>
 
-  <section class="content">
-    <div class="dropdown-section">
-      <label for="item-select" id="dropdown-label">Select an item to check if it's recyclable:</label>
-      <select id="item-select">
-        <option value="">--Select an item--</option>
-        <option value="paper">Paper</option>
-        <option value="plastic">Plastic</option>
-        <option value="glass">Glass</option>
-        <option value="metal">Metal</option>
-        <option value="organic">Organic waste</option>
-        <option value="electronics">Electronics</option>
-      </select>
-      <div id="recycling-info"></div>
-    </div>
+      <div class="infographic card">
+        <h2 id="guide-title" class="section-title">Recyclable Materials Guide</h2>
+        <img src="images/recycling-infographic.jpg" alt="Recycling Infographic" class="infographic-image">
+      </div>
+    </main>
 
-    <div class="infographic">
-      <h2 id="guide-title">Recyclable Materials Guide</h2>
-      <img src="recycling-infographic.jpg" alt="Recycling Infographic">
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 Recycling Guide. All Rights Reserved.</p>
-  </footer>
-
+    <footer class="main-footer">
+      <p>&copy; 2024 Recycling Guide. All Rights Reserved.</p>
+    </footer>
+  </div>
   <script src="scripts.js"></script>
 </body>
 </html>
