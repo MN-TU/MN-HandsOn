@@ -2,6 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f4f8;
+    background-image: url(images/Recycling\ basics.png);
     color: #333;
     margin: 0;
     padding: 0;
@@ -61,3 +62,11 @@ body {
     width: 100%;
   }
   
+  .infographic img {
+    width: 100%;  /* Makes the image stretch to fit the container */
+    max-width: 600px;  /* Limits the width to 600px */
+    height: auto;  /* Maintains aspect ratio */
+    display: block;
+    margin: 20px auto;
+  }
+    
