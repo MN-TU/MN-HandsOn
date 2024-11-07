@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recycling Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Recycling Guide</h1>
+    <p>Find out which items are recyclable!</p>
+  </header>
+
+  <section class="content">
+    <div class="dropdown-section">
+      <label for="item-select">Select an item to check if it's recyclable:</label>
+      <select id="item-select">
+        <option value="">--Select an item--</option>
+        <option value="paper">Paper</option>
+        <option value="plastic">Plastic</option>
+        <option value="glass">Glass</option>
+        <option value="metal">Metal</option>
+        <option value="organic">Organic waste</option>
+        <option value="electronics">Electronics</option>
+      </select>
+      <div id="recycling-info"></div>
+    </div>
+
+    <div class="infographic">
+      <h2>Recyclable Materials Guide</h2>
+      <img src="recycling-infographic.jpg" alt="Recycling Infographic">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Recycling Guide. All Rights Reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
