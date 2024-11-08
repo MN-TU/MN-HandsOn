@@ -61,8 +61,8 @@
   
   .item-tile {
     background-color: #e0f7fa;
-    width: 120px; /* Fixed width */
-    height: 120px; /* Fixed height */
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
     padding: 30px;
     border: 1px solid #b2ebf2;
     border-radius: 8px; /* Rounded square edges */

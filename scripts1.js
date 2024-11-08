@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         guideTitle: document.getElementById('guide-title')
     };
     let currentLanguage = 'en';
+    let selectedItem = null;
 
     const translations = {
         en: {
@@ -66,6 +67,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update language button styles
         document.getElementById('lang-en').classList.toggle('active', lang === 'en');
         document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+    
+        // Update the recycling info if an item is selected
+    if (selectedItem) {
+        recyclingInfo.textContent = translations[lang].recyclableData[selectedItem];
+    }
+    
     }
 
     // Event listeners for language buttons
