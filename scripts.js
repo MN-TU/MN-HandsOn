@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
       en: {
           pageTitle: "Recycling Info Guide",
           introText: "Find out which items are recyclable!",
-          dropdownLabel: "Select an item to check if it's recyclable:",
+          dropdownLabel: "Select a material to check if it's recyclable:",
           guideTitle: "Recyclable Materials Guide",
-          dropdownPlaceholder: "--Select an item--",
+          dropdownPlaceholder: "--Select a material--",
           dropdownItems: {
             paper: "Paper",
             plastic: "Plastic",
