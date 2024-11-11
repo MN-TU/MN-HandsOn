@@ -6,7 +6,8 @@
   }
   
   body {
-    font-family: 'Roboto', Arial, sans-serif;
+     font-family: 'Lato', Arial, sans-serif;
+    /* font-family: 'Roboto', Arial, sans-serif; */
     background-color: #f0f8ff;
     color: #333;
     line-height: 1.6;
@@ -26,6 +27,8 @@
     color: white; /* Ensure text is visible on the background */
     padding: 20px 0;
     text-align: center;
+    text-shadow: 2px 2px black; /* Create a black outline */
+    font-family: 'Montserrat', Arial, sans-serif; /* Switch to Montserrat font */
   }
   
   .language-nav {
