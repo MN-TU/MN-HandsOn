@@ -54,7 +54,7 @@
   /* Main content styles */
   .items-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
     justify-content: center;
     margin-top: 20px;
@@ -77,7 +77,7 @@
     background-size: cover; /* Cover the entire tile */
     background-position: center; /* Center the image */
   }
-  
+    
   .item-tile[data-item="paper"] {
     background-image: url('images/paper.jpg'); 
   }
