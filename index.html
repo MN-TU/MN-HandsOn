@@ -23,24 +23,15 @@
     </header>
 
     <main class="content">
-      <div class="dropdown-section card">
-        <label for="item-select" id="dropdown-label" class="dropdown-label">Select an item to check if it's recyclable:</label>
-        <select id="item-select" class="item-dropdown">
-          <option value="">--Select an item--</option>
-          <option value="paper">Paper</option>
-          <option value="plastic">Plastic</option>
-          <option value="glass">Glass</option>
-          <option value="metal">Metal</option>
-          <option value="organic">Organic waste</option>
-          <option value="electronics">Electronics</option>
-        </select>
-        <div id="recycling-info" class="info-text"></div>
+      <div class="items-container">
+        <div class="item-tile" data-item="paper">Paper</div>
+        <div class="item-tile" data-item="plastic">Plastic</div>
+        <div class="item-tile" data-item="glass">Glass</div>
+        <div class="item-tile" data-item="metal">Metal</div>
+        <div class="item-tile" data-item="textile">Textile</div>
+        <div class="item-tile" data-item="electronics">Electronics</div>
       </div>
-
-      <div class="infographic card">
-        <h2 id="guide-title" class="section-title">Recyclable Materials Guide</h2>
-        <img src="images/recycling-infographic.jpg" alt="Recycling Infographic" class="infographic-image">
-      </div>
+      <div id="recycling-info" class="info-text"></div>
     </main>
 
     <footer class="main-footer">
