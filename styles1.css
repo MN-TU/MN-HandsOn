@@ -94,8 +94,8 @@
     background-image: url('images/metal.jpg');
   }
   
-  .item-tile[data-item="organic"] {
-    background-image: url('images/organic\ waste.jpg');
+  .item-tile[data-item="textile"] {
+    background-image: url('images/textile.jpg');
   }
   
   .item-tile[data-item="electronics"] {

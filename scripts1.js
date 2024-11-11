@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 plastic: "Plastic",
                 glass: "Glass",
                 metal: "Metal",
-                organic: "Organic waste",
+                textile: "Textile",
                 electronics: "Electronics"
             },
             recyclableData: {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 plastic: "Yes, most plastics are recyclable! Check the recycling symbol on the item for the type of plastic.",
                 glass: "Yes, glass bottles and jars are recyclable! Please ensure they are clean before recycling.",
                 metal: "Yes, metals like aluminum and steel are recyclable! Be sure to rinse cans before recycling.",
-                organic: "Organic waste like food scraps can be composted. Check with local services for composting options.",
+                textile: "Textiles can often be recycled or donated. Check for local textile recycling programs.",
                 electronics: "Electronics such as phones, computers, and batteries require special recycling. Check local e-waste recycling facilities."
             }
         },
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 plastic: "塑料",
                 glass: "玻璃",
                 metal: "金属",
-                organic: "有机废物",
+                textile: "纺织品",
                 electronics: "电子产品"
             },
             recyclableData: {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 plastic: "是的，大多数塑料是可回收的！请检查物品上的回收符号以确认塑料类型。",
                 glass: "是的，玻璃瓶和玻璃罐是可回收的！回收前请确保它们是干净的。",
                 metal: "是的，铝和钢等金属是可回收的！请在回收前冲洗罐头。",
-                organic: "像食物残渣这样的有机垃圾可以堆肥。请与当地服务咨询堆肥选项。",
+                textile: "纺织品通常可以回收或捐赠。请查找当地的纺织品回收计划。",
                 electronics: "手机、电脑和电池等电子产品需要特别回收。请查看当地的电子废物回收设施。"
             }
         }
