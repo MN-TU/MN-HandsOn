@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
     
         // Update the recycling info if an item is selected
-    if (selectedItem) {
-        recyclingInfo.textContent = translations[lang].recyclableData[selectedItem];
-    }
+        if (selectedItem) {
+            recyclingInfo.textContent = translations[lang].recyclableData[selectedItem] || "Information not available.";
+        }
     
     }
 
@@ -89,8 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
         tile.addEventListener('click', function () {
             const item = tile.getAttribute('data-item');
             recyclingInfo.textContent = translations[currentLanguage].recyclableData[item] || "Information not available.";
+            selectedItem = item;
         });
     });
+
+    
 
     // Set the initial language on page load
     updateLanguage(currentLanguage);
