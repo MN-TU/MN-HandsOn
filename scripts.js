@@ -52,8 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Shampoo, body wash bottles", image: "images/plastic/shampoo, body wash bottles.jpg" },
                     { text: "Plastic clothes hanger", image: "images/plastic/clothes hanger.jpg" },
                 ],
-                glass: [{ text: "Beverage glass bottle", image: "images/glass/beverage glass bottle.jpg" },
-                    
+                glass: [
+                    { text: "Food glass bottle", image: "images/glass/food glass bottle.jpg" },
+                    { text: "Beverage glass bottle", image: "images/glass/beverage glass bottle.jpg" },
+                    { text: "Home-use glassware", image: "images/glass/home use glassware.jpg" },
+                    { text: "Perfume glass bottle", image: "images/glass/perfume glass bottle.jpg" },
+                    { text: "Cosmetic glass bottle", image: "images/glass/cosmestic glass bottle.jpg" },
                 ],
 
                 metal: "Aluminum and steel cans.",
@@ -79,7 +83,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Polystyrene foam products", image: "images/plastic/polystyrene foam product.jpg" },
                     { text: "Expired credit card", image: "images/plastic/expired credit card.jpg" },
                 ],
-                glass: [{ text: "Melamine cup", image: "images/plastic/melamine cups.jpg" },],
+                glass: [
+                    { text: "Light bulb", image: "images/glass/light bulb.jpg" },
+                    { text: "Bakeware", image: "images/glass/bakeware.jpg" },
+                    { text: "Tempered glass", image: "images/glass/tempered glass.jpg" },
+                    { text: "Windows", image: "images/glass/window glass.jpg" },
+                    { text: "Mirror", image: "images/glass/mirror.jpg" },
+                    { text: "Ceramic product", image: "images/glass/ceramic product.jpg" },
+                    { text: "Borosilicate glassware", image: "images/glass/borosilicate glassware.jpg" },
+                    { text: "Oven-safe food container", image: "images/glass/oven safe food container.jpg" },
+                ],
                 metal: "Paint cans and aerosol cans.",
                 textile: "Heavily soiled or contaminated textiles.",
                 electronics: "Batteries and certain types of electronics may need special disposal."
