@@ -21,11 +21,11 @@
   
   /* Header styles */
   .main-header {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('images/recycle.jpg'); /* Path to your background image */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('images/main/recycle.jpg'); /* Path to your background image */
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     color: white; /* Ensure text is visible on the background */
-    padding: 20px 0;
+    padding: 25px 0;
     text-align: center;
     text-shadow: 2px 2px black; /* Create a black outline */
     font-family: 'Montserrat', Arial, sans-serif; /* Switch to Montserrat font */
@@ -42,7 +42,7 @@
     padding: 5px 10px;
     margin: 0 5px;
     cursor: pointer;
-    font-size: 1.2em; /* Increase font size */
+    font-size: 1.8em; /* Increase font size */
     transition: background-color 0.3s;
   }
   
@@ -52,7 +52,7 @@
   }
   
   .main-title {
-    font-size: 2.5em;
+    font-size: 2.7em;
     margin-bottom: 10px;
   }
   
@@ -66,13 +66,13 @@
   }
   
   .item-tile {
-    width: 150px; /* Fixed width */
+    width: 190px; 
     height: 150px; /* Fixed height */
     border: 1px solid #b2ebf2;
     border-radius: 8px; /* Rounded square edges */
     cursor: pointer;
     text-align: center;
-    font-size: 1.5em; /* Increase font size */
+    font-size: 2.2em; /* Increase font size */
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
     display: flex;
@@ -84,40 +84,47 @@
   }
     
   .item-tile[data-item="paper"] {
-    background-image: url('images/paper2.jpg'); 
+    background-image: url('images/main/paper.jpg'); 
   }
   
   .item-tile[data-item="plastic"] {
-    background-image: url('images/plastic.jpg');
+    background-image: url('images/main/plastic.jpg');
   }
   
   .item-tile[data-item="glass"] {
-    background-image: url('images/glass.jpg');
+    background-image: url('images/main/glass.jpg');
   }
   
   .item-tile[data-item="metal"] {
-    background-image: url('images/metal.jpg');
+    background-image: url('images/main/metal.jpg');
   }
   
   .item-tile[data-item="textile"] {
-    background-image: url('images/textile.jpg');
+    background-image: url('images/main/textile.jpg');
   }
   
   .item-tile[data-item="electronics"] {
-    background-image: url('images/electronics.jpg');
+    background-image: url('images/main/electronics.jpg');
   }
 
   .item-tile:hover {
-    transform: scale(1.05); /* Optional: slightly scale up on hover */
+    transform: scale(1.10); /* Optional: slightly scale up on hover */
   }
   
-  .info-text {
+  .info-text1 {
     margin-top: 20px;
     padding: 10px;
     background-color: #e8f5e9;
     border-radius: 4px;
   }
   
+  .info-text2 {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+  }
+
   /* Footer styles */
   .main-footer {
     background-color: #333;
@@ -137,4 +144,124 @@
     margin-top: 10px; /* Optional: add some spacing */
   }
 
+  .info-items-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+  }
   
+  .info-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      text-align: center;
+  }
+  
+  .info-icon {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 8px;
+  }
+
+  .info-tile {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevents tiles from shrinking */
+}
+
+  .info-tile-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.info-tiles-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.recyclable-title,
+.non-recyclable-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    background-color: #ecf0f1; /* Light grey background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 40px; /* Increased left padding to accommodate the larger icon */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recyclable-title {
+    color: #2ecc71; /* Vibrant green color */
+}
+
+.non-recyclable-title {
+    color: #e74c3c; /* Vibrant red color */
+}
+
+.recyclable-title::before,
+.non-recyclable-title::before {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.recyclable-title::before {
+    content: '✓'; /* Green tick */
+    color: #27ae60; /* Darker green for the tick */
+}
+
+.non-recyclable-title::before {
+    content: '✕'; /* Red X */
+    color: #c0392b; /* Darker red for the X */
+}
+
+.recyclable-title::after,
+.non-recyclable-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.recyclable-title::after {
+    background-color: #27ae60; /* Darker green for underline */
+}
+
+.non-recyclable-title::after {
+    background-color: #c0392b; /* Darker red for underline */
+}
+
+.recyclable-title:hover::after,
+.non-recyclable-title:hover::after {
+    transform: scaleX(1);
+}
