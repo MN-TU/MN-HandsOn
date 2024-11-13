@@ -160,20 +160,21 @@
   }
   
   .info-icon {
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
   }
 
   .info-tile {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-size: cover;
     background-position: center;
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    flex-shrink: 0; /* Prevents tiles from shrinking */
 }
 
   .info-tile-text {
@@ -185,5 +186,81 @@
     color: white;
     padding: 5px;
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
+}
+
+.info-tiles-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.recyclable-title,
+.non-recyclable-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    background-color: #ecf0f1; /* Light grey background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 40px; /* Increased left padding to accommodate the larger icon */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recyclable-title {
+    color: #2ecc71; /* Vibrant green color */
+}
+
+.non-recyclable-title {
+    color: #e74c3c; /* Vibrant red color */
+}
+
+.recyclable-title::before,
+.non-recyclable-title::before {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.recyclable-title::before {
+    content: '✓'; /* Green tick */
+    color: #27ae60; /* Darker green for the tick */
+}
+
+.non-recyclable-title::before {
+    content: '✕'; /* Red X */
+    color: #c0392b; /* Darker red for the X */
+}
+
+.recyclable-title::after,
+.non-recyclable-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.recyclable-title::after {
+    background-color: #27ae60; /* Darker green for underline */
+}
+
+.non-recyclable-title::after {
+    background-color: #c0392b; /* Darker red for underline */
+}
+
+.recyclable-title:hover::after,
+.non-recyclable-title:hover::after {
+    transform: scaleX(1);
 }

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nonRecyclableTitle: "No, these are NOT recyclable!",
             recyclableData: {
                 paper: [
-                    { text: "Newspapers", image: "images/paper/newspaper.jpg" },
+                    { text: "Newspaper", image: "images/paper/newspaper.jpg" },
                     { text: "Cardboard", image: "images/paper/cardboard.jpg" },
                     { text: "Office paper", image: "images/paper/office paper.jpg" }
                 ],
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
             nonRecyclableData: {
                 paper: [
                     { text: "Waxed paper", image: "images/paper/waxed paper.jpg" },
-                    { text: "Used paper towel", image: "images/paper/used paper towel.jpg" },
-                    { text: "Used paper disposable", image: "images/paper/used paper disposable.jpg" },
-                    { text: "Used tissue paper", image: "images/paper/used tissue paper.jpg" },
+                    { text: "Paper towel", image: "images/paper/paper towel.jpg" },
+                    { text: "Paper disposable", image: "images/paper/paper disposable.jpg" },
+                    { text: "Tissue paper", image: "images/paper/tissue paper.jpg" },
                 ],
                 plastic: "Plastic bags, styrofoam, and certain types of plastic packaging.",
                 glass: "Broken glass, mirrors, and light bulbs.",
@@ -107,29 +107,31 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateRecyclingInfo(item) {
         const recyclableElement = document.getElementById('recyclable');
         const nonRecyclableElement = document.getElementById('non-recyclable');
-
+    
         function createItemElements(data) {
-            return data.map(item => `
-                <div class="info-tile" style="background-image: url('${item.image}')">
-                    <span class="info-tile-text">${item.text}</span>
+            return `
+                <div class="info-tiles-wrapper">
+                    <div class="info-tiles-container">
+                        ${data.map(item => `
+                            <div class="info-tile" style="background-image: url('${item.image}')">
+                                <span class="info-tile-text">${item.text}</span>
+                            </div>
+                        `).join('')}
+                    </div>
                 </div>
-            `).join('');
+            `;
         }
-
+    
         recyclableElement.innerHTML = `
-        <h3>${translations[currentLanguage].recyclableTitle}</h3>
-        <div class="info-items-container">
+            <h3 class="recyclable-title">${translations[currentLanguage].recyclableTitle}</h3>
             ${createItemElements(translations[currentLanguage].recyclableData[item])}
-        </div>
-    `;
-
-    nonRecyclableElement.innerHTML = `
-        <h3>${translations[currentLanguage].nonRecyclableTitle}</h3>
-        <div class="info-items-container">
+        `;
+    
+        nonRecyclableElement.innerHTML = `
+            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle}</h3>
             ${createItemElements(translations[currentLanguage].nonRecyclableData[item])}
-        </div>
-    `;
-}
+        `;
+    }
 
     // Event listeners for language buttons
     document.getElementById('lang-en').addEventListener('click', function () {
