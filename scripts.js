@@ -27,7 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 paper: [
                     { text: "Newspaper", image: "images/paper/newspaper.jpg" },
                     { text: "Cardboard", image: "images/paper/cardboard.jpg" },
-                    { text: "Office paper", image: "images/paper/office paper.jpg" }
+                    { text: "Office paper", image: "images/paper/office paper.jpg" },
+                    { text: "Office paper", image: "images/paper/office paper.jpg" },
+                    { text: "Office paper", image: "images/paper/office paper.jpg" },
+                    { text: "Office paper", image: "images/paper/office paper.jpg" },
+                    { text: "Office paper", image: "images/paper/office paper.jpg" },
+                    { text: "Office paper", image: "images/paper/office paper.jpg" },
                 ],
                 plastic: "Most plastics with recycling symbols.",
                 glass: "Glass bottles and jars.",

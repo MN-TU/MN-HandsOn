@@ -25,7 +25,7 @@
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     color: white; /* Ensure text is visible on the background */
-    padding: 20px 0;
+    padding: 25px 0;
     text-align: center;
     text-shadow: 2px 2px black; /* Create a black outline */
     font-family: 'Montserrat', Arial, sans-serif; /* Switch to Montserrat font */
@@ -190,11 +190,12 @@
 }
 
 .info-tiles-container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .recyclable-title,
