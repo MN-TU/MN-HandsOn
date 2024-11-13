@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 paper: [
                     { text: "Newspaper", image: "images/paper/newspaper.jpg" },
                     { text: "Egg tray", image: "images/paper/egg tray.jpg" },
-                    { text: "Envelope", image: "images/paper/envelope.jpg" },
+                    { text: "Calendar", image: "images/paper/calendar.jpg" },
                     { text: "Magazine", image: "images/paper/magazine.jpg" },
-                    { text: "textbook", image: "images/paper/textbook.jpg" },
+                    { text: "Textbook", image: "images/paper/textbook.jpg" },
                     { text: "Cardboard", image: "images/paper/cardboard.jpg" },
                     { text: "Office paper", image: "images/paper/office paper.jpg" },
                     { text: "Beverage carton", image: "images/paper/beverage carton.jpg" },
