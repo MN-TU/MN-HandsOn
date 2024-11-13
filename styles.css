@@ -84,27 +84,27 @@
   }
     
   .item-tile[data-item="paper"] {
-    background-image: url('images/main/paper.jpg'); 
+    background-image: url('images/Main/paper.jpg'); 
   }
   
   .item-tile[data-item="plastic"] {
-    background-image: url('images/main/plastic.jpg');
+    background-image: url('images/Main/plastic.jpg');
   }
   
   .item-tile[data-item="glass"] {
-    background-image: url('images/main/glass.jpg');
+    background-image: url('images/Main/glass.jpg');
   }
   
   .item-tile[data-item="metal"] {
-    background-image: url('images/main/metal.jpg');
+    background-image: url('images/Main/metal.jpg');
   }
   
   .item-tile[data-item="textile"] {
-    background-image: url('images/main/textile.jpg');
+    background-image: url('images/Main/textile.jpg');
   }
   
   .item-tile[data-item="electronics"] {
-    background-image: url('images/main/electronics.jpg');
+    background-image: url('images/Main/electronics.jpg');
   }
 
   .item-tile:hover {
