@@ -111,13 +111,20 @@
     transform: scale(1.05); /* Optional: slightly scale up on hover */
   }
   
-  .info-text {
+  .info-text1 {
     margin-top: 20px;
     padding: 10px;
     background-color: #e8f5e9;
     border-radius: 4px;
   }
   
+  .info-text2 {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+  }
+
   /* Footer styles */
   .main-footer {
     background-color: #333;

@@ -21,13 +21,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 textile: "Textile",
                 electronics: "Electronics"
             },
+            recyclableTitle: "Yes, these are recyclable!",
+            nonRecyclableTitle: "No, these are NOT recyclable!",
             recyclableData: {
-                paper: "Yes, paper is recyclable! Please recycle newspapers, cardboard, and office paper.",
-                plastic: "Yes, most plastics are recyclable! Check the recycling symbol on the item for the type of plastic.",
-                glass: "Yes, glass bottles and jars are recyclable! Please ensure they are clean before recycling.",
-                metal: "Yes, metals like aluminum and steel are recyclable! Be sure to rinse cans before recycling.",
-                textile: "Textiles can often be recycled or donated. Check for local textile recycling programs.",
-                electronics: "Electronics such as phones, computers, and batteries require special recycling. Check local e-waste recycling facilities."
+                paper: "Newspapers, cardboard, and office paper.",
+                plastic: "Most plastics with recycling symbols.",
+                glass: "Glass bottles and jars.",
+                metal: "Aluminum and steel cans.",
+                textile: "Some textiles can be recycled or donated.",
+                electronics: "Many electronics can be recycled at special facilities."
+            },
+            nonRecyclableData: {
+                paper: "Waxed paper, used paper towels, and contaminated paper.",
+                plastic: "Plastic bags, styrofoam, and certain types of plastic packaging.",
+                glass: "Broken glass, mirrors, and light bulbs.",
+                metal: "Paint cans and aerosol cans.",
+                textile: "Heavily soiled or contaminated textiles.",
+                electronics: "Batteries and certain types of electronics may need special disposal."
             }
         },
         zh: {
@@ -41,13 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 textile: "纺织品",
                 electronics: "电子产品"
             },
+            recyclableTitle: "是的，这些是可回收的！",
+            nonRecyclableTitle: "不，这些是不可回收的！",
             recyclableData: {
-                paper: "是的，纸张是可回收的！请回收报纸、纸板和办公纸张。",
-                plastic: "是的，大多数塑料是可回收的！请检查物品上的回收符号以确认塑料类型。",
-                glass: "是的，玻璃瓶和玻璃罐是可回收的！回收前请确保它们是干净的。",
-                metal: "是的，铝和钢等金属是可回收的！请在回收前冲洗罐头。",
-                textile: "纺织品通常可以回收或捐赠。请查找当地的纺织品回收计划。",
-                electronics: "手机、电脑和电池等电子产品需要特别回收。请查看当地的电子废物回收设施。"
+                paper: "报纸、纸板和办公用纸。",
+                plastic: "大多数带有回收标志的塑料。",
+                glass: "玻璃瓶和玻璃罐。",
+                metal: "铝罐和钢罐。",
+                textile: "某些纺织品可以回收或捐赠。",
+                electronics: "许多电子产品可以在特殊设施回收。"
+            },
+            nonRecyclableData: {
+                paper: "蜡纸、使用过的纸巾和受污染的纸。",
+                plastic: "塑料袋、泡沫塑料和某些类型的塑料包装。",
+                glass: "破碎的玻璃、镜子和灯泡。",
+                metal: "油漆罐和气雾罐。",
+                textile: "严重污损或受污染的纺织品。",
+                electronics: "电池和某些类型的电子产品可能需要特殊处理。"
             }
         }
     };
@@ -70,9 +90,24 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Update the recycling info if an item is selected
         if (selectedItem) {
-            recyclingInfo.textContent = translations[lang].recyclableData[selectedItem] || "Information not available.";
+            updateRecyclingInfo(selectedItem);
         }
     
+    }
+
+    function updateRecyclingInfo(item) {
+        const recyclableElement = document.getElementById('recyclable');
+        const nonRecyclableElement = document.getElementById('non-recyclable');
+
+        recyclableElement.innerHTML = `
+            <h3>${translations[currentLanguage].recyclableTitle}</h3>
+            <p>${translations[currentLanguage].recyclableData[item]}</p>
+        `;
+
+        nonRecyclableElement.innerHTML = `
+            <h3>${translations[currentLanguage].nonRecyclableTitle}</h3>
+            <p>${translations[currentLanguage].nonRecyclableData[item]}</p>
+        `;
     }
 
     // Event listeners for language buttons
@@ -88,12 +123,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.item-tile').forEach(tile => {
         tile.addEventListener('click', function () {
             const item = tile.getAttribute('data-item');
-            recyclingInfo.textContent = translations[currentLanguage].recyclableData[item] || "Information not available.";
             selectedItem = item;
+        updateRecyclingInfo(item);
         });
     });
-
-    
 
     // Set the initial language on page load
     updateLanguage(currentLanguage);
