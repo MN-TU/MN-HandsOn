@@ -60,9 +60,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Cosmetic glass bottle", image: "images/glass/cosmestic glass bottle.jpg" },
                 ],
 
-                metal: "Aluminum and steel cans.",
-                textile: "Some textiles can be recycled or donated.",
-                electronics: "Many electronics can be recycled at special facilities."
+                metal: [
+                    { text: "Medals", image: "images/metal/medals.jpg" },
+                    { text: "Metal bottle cap", image: "images/metal/metal bottle cap.jpg" },
+                    { text: "Aerosol can", image: "images/metal/aerosol can.jpg" },
+                    { text: "Paint container", image: "images/metal/paint container.jpg" },
+                    { text: "Metal cutlery", image: "images/metal/metal cutlery.jpg" },
+                    { text: "Steel wool", image: "images/metal/steel wool.jpg" },
+                    { text: "Food metal can", image: "images/metal/food metal can.jpg" },
+                    { text: "Beverage metal can", image: "images/metal/beverage metal can.jpg" },
+                    { text: "Clean aluminum tray", image: "images/metal/clean aluminum tray.jpg" },
+                    { text: "Clean aluminum foil", image: "images/metal/clean aluminum foil.jpg" },
+                    
+                ],
+                textile: [
+                    { text: "Clean clothes", image: "images/textile/clothes.jpg" },
+                    { text: "Cap", image: "images/textile/cap.jpg" },
+                    { text: "Curtain", image: "images/textile/curtain.jpg" },
+                    { text: "Pillowcase", image: "images/textile/pillowcase.jpg" },
+                    { text: "Household linen", image: "images/textile/household linen.jpg" },
+                    { text: "Blanket", image: "images/textile/blanket.jpg" },
+                    { text: "Bedsheet", image: "images/textile/bedsheet.jpg" },
+                    { text: "Shoes", image: "images/textile/shoes.jpg" },
+                    { text: "Boots", image: "images/textile/boots.jpg" },
+                    { text: "Soft toy", image: "images/textile/soft toy.jpg" },
+                    { text: "belt", image: "images/textile/belt.jpg" },
+                    { text: "Bag", image: "images/textile/bag.jpg" },
+                ],
+                electronics: [
+
+                ],
             },
             nonRecyclableData: {
                 paper: [
@@ -93,8 +120,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Borosilicate glassware", image: "images/glass/borosilicate glassware.jpg" },
                     { text: "Oven-safe food container", image: "images/glass/oven safe food container.jpg" },
                 ],
-                metal: "Paint cans and aerosol cans.",
-                textile: "Heavily soiled or contaminated textiles.",
+                metal: [
+                    { text: "Rusty metal can", image: "images/metal/rusty metal can.jpg" },
+                    { text: "Dirty aluminum tray", image: "images/metal/dirty aluminum tray.jpg" },
+                    { text: "Dirty aluminum foil", image: "images/metal/dirty aluminum foil.jpg" },
+                ],
+                textile: [
+                    { text: "Underwear", image: "images/textile/underwear.jpg" },
+                    { text: "Pillow sponge", image: "images/textile/pillow sponge.jpg" },
+                    { text: "Mattress foam", image: "images/textile/mattress foam.jpg" },
+                ],
                 electronics: "Batteries and certain types of electronics may need special disposal."
             }
         },
