@@ -52,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Shampoo, body wash bottles", image: "images/plastic/shampoo, body wash bottles.jpg" },
                     { text: "Plastic clothes hanger", image: "images/plastic/clothes hanger.jpg" },
                 ],
-                glass: "Glass bottles and jars.",
+                glass: [{ text: "Beverage glass bottle", image: "images/glass/beverage glass bottle.jpg" },
+                    
+                ],
+
                 metal: "Aluminum and steel cans.",
                 textile: "Some textiles can be recycled or donated.",
                 electronics: "Many electronics can be recycled at special facilities."
