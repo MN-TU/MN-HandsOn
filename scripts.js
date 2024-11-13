@@ -110,9 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function createItemElements(data) {
             return data.map(item => `
-                <div class="info-item">
-                    <img src="${item.image}" alt="${item.text}" class="info-icon">
-                    <span>${item.text}</span>
+                <div class="info-tile" style="background-image: url('${item.image}')">
+                    <span class="info-tile-text">${item.text}</span>
                 </div>
             `).join('');
         }
