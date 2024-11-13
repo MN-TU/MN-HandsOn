@@ -24,7 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
             recyclableTitle: "Yes, these are recyclable!",
             nonRecyclableTitle: "No, these are NOT recyclable!",
             recyclableData: {
-                paper: "Newspapers, cardboard, and office paper.",
+                paper: [
+                    { text: "Newspapers", image: "images/paper/newspaper.jpg" },
+                    { text: "Cardboard", image: "images/paper/cardboard.jpg" },
+                    { text: "Office paper", image: "images/paper/office paper.jpg" }
+                ],
                 plastic: "Most plastics with recycling symbols.",
                 glass: "Glass bottles and jars.",
                 metal: "Aluminum and steel cans.",
@@ -32,7 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 electronics: "Many electronics can be recycled at special facilities."
             },
             nonRecyclableData: {
-                paper: "Waxed paper, used paper towels, and contaminated paper.",
+                paper: [
+                    { text: "Waxed paper", image: "images/paper/waxed paper.jpg" },
+                    { text: "Used paper towel", image: "images/paper/used paper towel.jpg" },
+                    { text: "Used paper disposable", image: "images/paper/used paper disposable.jpg" },
+                    { text: "Used tissue paper", image: "images/paper/used tissue paper.jpg" },
+                ],
                 plastic: "Plastic bags, styrofoam, and certain types of plastic packaging.",
                 glass: "Broken glass, mirrors, and light bulbs.",
                 metal: "Paint cans and aerosol cans.",
@@ -99,16 +108,29 @@ document.addEventListener('DOMContentLoaded', function () {
         const recyclableElement = document.getElementById('recyclable');
         const nonRecyclableElement = document.getElementById('non-recyclable');
 
-        recyclableElement.innerHTML = `
-            <h3>${translations[currentLanguage].recyclableTitle}</h3>
-            <p>${translations[currentLanguage].recyclableData[item]}</p>
-        `;
+        function createItemElements(data) {
+            return data.map(item => `
+                <div class="info-item">
+                    <img src="${item.image}" alt="${item.text}" class="info-icon">
+                    <span>${item.text}</span>
+                </div>
+            `).join('');
+        }
 
-        nonRecyclableElement.innerHTML = `
-            <h3>${translations[currentLanguage].nonRecyclableTitle}</h3>
-            <p>${translations[currentLanguage].nonRecyclableData[item]}</p>
-        `;
-    }
+        recyclableElement.innerHTML = `
+        <h3>${translations[currentLanguage].recyclableTitle}</h3>
+        <div class="info-items-container">
+            ${createItemElements(translations[currentLanguage].recyclableData[item])}
+        </div>
+    `;
+
+    nonRecyclableElement.innerHTML = `
+        <h3>${translations[currentLanguage].nonRecyclableTitle}</h3>
+        <div class="info-items-container">
+            ${createItemElements(translations[currentLanguage].nonRecyclableData[item])}
+        </div>
+    `;
+}
 
     // Event listeners for language buttons
     document.getElementById('lang-en').addEventListener('click', function () {

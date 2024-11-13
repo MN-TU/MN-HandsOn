@@ -84,7 +84,7 @@
   }
     
   .item-tile[data-item="paper"] {
-    background-image: url('images/paper2.jpg'); 
+    background-image: url('images/paper.jpg'); 
   }
   
   .item-tile[data-item="plastic"] {
@@ -144,4 +144,24 @@
     margin-top: 10px; /* Optional: add some spacing */
   }
 
+  .info-items-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+  }
   
+  .info-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      text-align: center;
+  }
+  
+  .info-icon {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 5px;
+  }
