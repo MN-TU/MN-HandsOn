@@ -311,7 +311,7 @@
 .about-button-container {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 80px;
     z-index: 10;
 }
 
@@ -321,7 +321,7 @@
   background-color: rgba(29, 164, 76, 0.8); /* Semi-transparent blue */
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }

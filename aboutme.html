@@ -31,17 +31,57 @@
             margin: 10px 0;
         }
     </style>
+    <style>
+        /* Existing styles... */
+    
+        .home-button-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 0px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+    
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+    
+        /* To ensure the button doesn't overlap with the content */
+        body {
+            padding-top: 60px;
+        }
+    </style>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4TKXT55H8"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-P4TKXT55H8');
+ </script>
 </head>
 <body>
+    <body style="position: relative;"> </body>
     <h1>About My Recycling Project</h1>
+
+    <div class="home-button-container">
+        <a href="index.html" class="home-button">Return to Home</a>
+    </div>
 
     <div class="section">
         <h2>Problem Statement</h2>
         <p>
-            In today's world, the improper disposal of waste, particularly electronic waste, poses a significant environmental challenge. Many people are unaware of the correct ways to recycle various items, leading to increased landfill waste and potential environmental hazards.
-        </p>
-        <p class="highlight">
-            The core problem is the lack of easily accessible, user-friendly information on proper recycling practices, especially for complex items like electronics.
+            In Singapore, senior citizens find it difficult to understand which materials can be recycled, causing confusion and improper disposal of waste at residential estates. <strong>This results in an increase in non-recyclable items being placed in recycling bins.</strong> This is important because it undermines Singapore's sustainability initiatives and hampers progress toward the nation's goal of becoming zero-waste. 
         </p>
     </div>
 
