@@ -151,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Mattress foam", image: "images/textile/mattress foam.jpg" },
                 ],
                 electronics: [
-                    { text: "Mattress foam", image: "images/textile/mattress foam.jpg" },
+                    { text: "Broken lamp", image: "images/electronics/broken lamp.jpg" },
+                    { text: "Broken light bulb", image: "images/electronics/broken light bulb.jpg" },
+                    { text: "Leaking battery", image: "images/electronics/leaking battery.jpg" },
                 ]
             }
         },
