@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 metal: [
                     { text: "Medals", image: "images/metal/medals.jpg" },
                     { text: "Metal bottle cap", image: "images/metal/metal bottle cap.jpg" },
-                    { text: "Aerosol can", image: "images/metal/aerosol can.jpg" },
                     { text: "Paint container", image: "images/metal/paint container.jpg" },
                     { text: "Metal cutlery", image: "images/metal/metal cutlery.jpg" },
                     { text: "Steel wool", image: "images/metal/steel wool.jpg" },
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Beverage metal can", image: "images/metal/beverage metal can.jpg" },
                     { text: "Clean aluminum tray", image: "images/metal/clean aluminum tray.jpg" },
                     { text: "Clean aluminum foil", image: "images/metal/clean aluminum foil.jpg" },
-                    
+                    { text: "Empited aerosol can", image: "images/metal/aerosol can.jpg" },
                 ],
                 textile: [
                     { text: "Clean clothes", image: "images/textile/clothes.jpg" },
