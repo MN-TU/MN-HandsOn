@@ -222,14 +222,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const nonRecyclableElement = document.getElementById('non-recyclable');
     
         function createItemElements(data) {
-            let headerHtml = '';
-            let itemsHtml = '';
+            let html = '';
         
             data.forEach(item => {
-                if (item.isHeader) {
-                    headerHtml = `<h4 class="subheader">${item.text}</h4>`;
+                if (item.isHeader || item.isSubHeader) {
+                    html += `
+                        <div class="subheader-row">
+                            <h4 class="subheader">${item.text}</h4>
+                        </div>
+                    `;
                 } else {
-                    itemsHtml += `
+                    html += `
                         <div class="info-tile" style="background-image: url('${item.image || ''}')">
                             <span class="info-tile-text">${item.text || ''}</span>
                         </div>
@@ -239,10 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
             return `
                 <div class="info-tiles-wrapper">
-                    ${headerHtml}
-                    <div class="info-tiles-container">
-                        ${itemsHtml}
-                    </div>
+                    ${html}
                 </div>
             `;
         }
