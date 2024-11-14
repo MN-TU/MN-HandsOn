@@ -307,3 +307,29 @@
 .non-recyclable-title:hover::after {
     transform: scaleX(1);
 }
+
+.about-button-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.about-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(29, 164, 76, 0.8); /* Semi-transparent blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: rgb(127, 217, 165); /* Solid blue on hover */
+}
+
+.title-container {
+    position: relative;
+}
