@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 metal: [
                     { text: "Medals", image: "images/metal/medals.jpg" },
                     { text: "Metal bottle cap", image: "images/metal/metal bottle cap.jpg" },
-                    { text: "Aerosol can", image: "images/metal/aerosol can.jpg" },
                     { text: "Paint container", image: "images/metal/paint container.jpg" },
                     { text: "Metal cutlery", image: "images/metal/metal cutlery.jpg" },
                     { text: "Steel wool", image: "images/metal/steel wool.jpg" },
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Beverage metal can", image: "images/metal/beverage metal can.jpg" },
                     { text: "Clean aluminum tray", image: "images/metal/clean aluminum tray.jpg" },
                     { text: "Clean aluminum foil", image: "images/metal/clean aluminum foil.jpg" },
-                    
+                    { text: "Empited aerosol can", image: "images/metal/aerosol can.jpg" },
                 ],
                 textile: [
                     { text: "Clean clothes", image: "images/textile/clothes.jpg" },
@@ -88,7 +87,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Bag", image: "images/textile/bag.jpg" },
                 ],
                 electronics: [
-
+                    { text: "Regulated Electronics Waste", isHeader: true },
+                    { text: "Laptop", image: "images/electronics/laptop.jpg" },
+                    { text: "Tablet", image: "images/electronics/tablet.jpg" },
+                    { text: "Printer", image: "images/electronics/printer.jpg" },
+                    { text: "Powerbank", image: "images/electronics/powerbank.jpg" },
+                    { text: "Mobile phone", image: "images/electronics/mobile phone.jpg" },
+                    { text: "Modem/Router", image: "images/electronics/modem or router.jpg" },
+                    { text: "Light bulb", image: "images/electronics/light bulb.jpg" },
+                    { text: "Fluorescent tube", image: "images/electronics/fluorescent tube.jpg" },
+                    { text: "Household battery", image: "images/electronics/household battery.jpg" },
+                    { text: "Computer monitor screen", image: "images/electronics/computer monitor screen.jpg" },
+                    { text: "Non-regulated Electronics Waste", isHeader: true },
+                    { text: "Blender", image: "images/electronics/blender.jpg" },
+                    { text: "Camera", image: "images/electronics/camera.jpg" },
+                    { text: "Vacuum cleaner", image: "images/electronics/vacuum cleaner.jpg" },
+                    { text: "Coffee machine", image: "images/electronics/coffee machine.jpg" },
+                    { text: "Fan", image: "images/electronics/fan.jpg" },
+                    { text: "Game console", image: "images/electronics/game console.jpg" },
+                    { text: "Hair dryer", image: "images/electronics/hair dryer.jpg" },
+                    { text: "Microwave", image: "images/electronics/microwave.jpg" },
+                    { text: "Rice cooker", image: "images/electronics/rice cooker.jpg" },
+                    { text: "Electric toothbrush", image: "images/electronics/electric toothbrush.png" },
                 ],
             },
             nonRecyclableData: {
@@ -130,7 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Pillow sponge", image: "images/textile/pillow sponge.jpg" },
                     { text: "Mattress foam", image: "images/textile/mattress foam.jpg" },
                 ],
-                electronics: "Batteries and certain types of electronics may need special disposal."
+                electronics: [
+                    { text: "Broken lamp", image: "images/electronics/broken lamp.jpg" },
+                    { text: "Broken light bulb", image: "images/electronics/broken light bulb.jpg" },
+                    { text: "Leaking battery", image: "images/electronics/leaking battery.jpg" },
+                ]
             }
         },
         zh: {
@@ -164,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-
+    
     function updateLanguage(lang) {
         currentLanguage = lang;
         // Update static page elements
@@ -186,6 +210,11 @@ document.addEventListener('DOMContentLoaded', function () {
             updateRecyclingInfo(selectedItem);
         }
     
+        // Clear any greyed-out states
+        document.querySelectorAll('.item-tile').forEach(tile => {
+            tile.classList.remove('greyed-out');
+});
+
     }
 
     function updateRecyclingInfo(item) {
@@ -193,27 +222,48 @@ document.addEventListener('DOMContentLoaded', function () {
         const nonRecyclableElement = document.getElementById('non-recyclable');
     
         function createItemElements(data) {
+            let html = '';
+        
+            data.forEach(item => {
+                if (item.isHeader || item.isSubHeader) {
+                    html += `
+                        <div class="subheader-row">
+                            <h4 class="subheader">${item.text}</h4>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <div class="info-tile" style="background-image: url('${item.image || ''}')">
+                            <span class="info-tile-text">${item.text || ''}</span>
+                        </div>
+                    `;
+                }
+            });
+        
             return `
                 <div class="info-tiles-wrapper">
-                    <div class="info-tiles-container">
-                        ${data.map(item => `
-                            <div class="info-tile" style="background-image: url('${item.image}')">
-                                <span class="info-tile-text">${item.text}</span>
-                            </div>
-                        `).join('')}
-                    </div>
+                    ${html}
                 </div>
             `;
         }
     
-        recyclableElement.innerHTML = `
-            <h3 class="recyclable-title">${translations[currentLanguage].recyclableTitle}</h3>
-            ${createItemElements(translations[currentLanguage].recyclableData[item])}
+        let recyclableContent = `
+            <h3 class="recyclable-title">${translations[currentLanguage].recyclableTitle || ''}</h3>
         `;
     
+        if (item === 'electronics') {
+            recyclableContent += `
+                <p class="electronics-info">${translations[currentLanguage].electronicsInfo || ''}</p>
+            `;
+        }
+    
+        recyclableContent += createItemElements(translations[currentLanguage].recyclableData[item] || []);
+    
+        recyclableElement.innerHTML = recyclableContent;
+    
         nonRecyclableElement.innerHTML = `
-            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle}</h3>
-            ${createItemElements(translations[currentLanguage].nonRecyclableData[item])}
+            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
+            ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
         `;
     }
 
@@ -231,9 +281,24 @@ document.addEventListener('DOMContentLoaded', function () {
         tile.addEventListener('click', function () {
             const item = tile.getAttribute('data-item');
             selectedItem = item;
-        updateRecyclingInfo(item);
+            updateRecyclingInfo(item);
+            
+            // Remove greyed-out class from all tiles
+            document.querySelectorAll('.item-tile').forEach(t => {
+                t.classList.remove('greyed-out');
+            });
+            
+            // Add greyed-out class to all tiles except the clicked one
+            document.querySelectorAll('.item-tile:not([data-item="' + item + '"])').forEach(t => {
+                t.classList.add('greyed-out');
+            });
         });
     });
+
+            // Clear any greyed-out states on page load
+            document.querySelectorAll('.item-tile').forEach(tile => {
+                tile.classList.remove('greyed-out');
+            });
 
     // Set the initial language on page load
     updateLanguage(currentLanguage);
