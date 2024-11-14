@@ -138,7 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Pillow sponge", image: "images/textile/pillow sponge.jpg" },
                     { text: "Mattress foam", image: "images/textile/mattress foam.jpg" },
                 ],
-                electronics: "Batteries and certain types of electronics may need special disposal."
+                electronics: [
+                    { text: "Mattress foam", image: "images/textile/mattress foam.jpg" },
+                ]
             }
         },
         zh: {
