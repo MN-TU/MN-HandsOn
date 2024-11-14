@@ -185,6 +185,11 @@ document.addEventListener('DOMContentLoaded', function () {
             updateRecyclingInfo(selectedItem);
         }
     
+        // Clear any greyed-out states
+        document.querySelectorAll('.item-tile').forEach(tile => {
+            tile.classList.remove('greyed-out');
+});
+
     }
 
     function updateRecyclingInfo(item) {
@@ -230,9 +235,24 @@ document.addEventListener('DOMContentLoaded', function () {
         tile.addEventListener('click', function () {
             const item = tile.getAttribute('data-item');
             selectedItem = item;
-        updateRecyclingInfo(item);
+            updateRecyclingInfo(item);
+            
+            // Remove greyed-out class from all tiles
+            document.querySelectorAll('.item-tile').forEach(t => {
+                t.classList.remove('greyed-out');
+            });
+            
+            // Add greyed-out class to all tiles except the clicked one
+            document.querySelectorAll('.item-tile:not([data-item="' + item + '"])').forEach(t => {
+                t.classList.add('greyed-out');
+            });
         });
     });
+
+            // Clear any greyed-out states on page load
+            document.querySelectorAll('.item-tile').forEach(tile => {
+                tile.classList.remove('greyed-out');
+            });
 
     // Set the initial language on page load
     updateLanguage(currentLanguage);

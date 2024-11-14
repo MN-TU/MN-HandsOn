@@ -111,6 +111,11 @@
     transform: scale(1.10); /* Optional: slightly scale up on hover */
   }
   
+  .item-tile.greyed-out {
+      filter: grayscale(100%) opacity(50%);
+      transition: filter 0.3s ease;
+  }
+
   .info-text1 {
     margin-top: 20px;
     padding: 10px;
