@@ -87,7 +87,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Bag", image: "images/textile/bag.jpg" },
                 ],
                 electronics: [
-
+                    { text: "Laptop", image: "images/electronics/laptop.jpg" },
+                    { text: "Tablet", image: "images/electronics/tablet.jpg" },
+                    { text: "Printer", image: "images/electronics/printer.jpg" },
+                    { text: "Powerbank", image: "images/electronics/powerbank.jpg" },
+                    { text: "Mobile phone", image: "images/electronics/mobile phone.jpg" },
+                    { text: "Modem/Router", image: "images/electronics/modem or router.jpg" },
+                    { text: "Light bulb", image: "images/electronics/light bulb.jpg" },
+                    { text: "Fluorescent tube", image: "images/electronics/fluorescent tube.jpg" },
+                    { text: "Household battery", image: "images/electronics/household battery.jpg" },
+                    { text: "Computer monitor screen", image: "images/electronics/computer monitor screen.jpg" },
                 ],
             },
             nonRecyclableData: {
