@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Bag", image: "images/textile/bag.jpg" },
                 ],
                 electronics: [
+                    { text: "Regulated Electronics Waste", isHeader: true },
                     { text: "Laptop", image: "images/electronics/laptop.jpg" },
                     { text: "Tablet", image: "images/electronics/tablet.jpg" },
                     { text: "Printer", image: "images/electronics/printer.jpg" },
@@ -97,6 +98,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     { text: "Fluorescent tube", image: "images/electronics/fluorescent tube.jpg" },
                     { text: "Household battery", image: "images/electronics/household battery.jpg" },
                     { text: "Computer monitor screen", image: "images/electronics/computer monitor screen.jpg" },
+                    { text: "Non-regulated Electronics Waste", isHeader: true },
+                    { text: "Blender", image: "images/electronics/blender.jpg" },
+                    { text: "Camera", image: "images/electronics/camera.jpg" },
+                    { text: "Vacuum cleaner", image: "images/electronics/vacuum cleaner.jpg" },
+                    { text: "Coffee machine", image: "images/electronics/coffee machine.jpg" },
+                    { text: "Fan", image: "images/electronics/fan.jpg" },
+                    { text: "Game console", image: "images/electronics/game console.jpg" },
+                    { text: "Hair dryer", image: "images/electronics/hair dryer.jpg" },
+                    { text: "Microwave", image: "images/electronics/microwave.jpg" },
+                    { text: "Rice cooker", image: "images/electronics/rice cooker.jpg" },
+                    { text: "Electric toothbrush", image: "images/electronics/electric toothbrush.png" },
                 ],
             },
             nonRecyclableData: {
@@ -174,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-
+    
     function updateLanguage(lang) {
         currentLanguage = lang;
         // Update static page elements
@@ -208,27 +220,48 @@ document.addEventListener('DOMContentLoaded', function () {
         const nonRecyclableElement = document.getElementById('non-recyclable');
     
         function createItemElements(data) {
+            let headerHtml = '';
+            let itemsHtml = '';
+        
+            data.forEach(item => {
+                if (item.isHeader) {
+                    headerHtml = `<h4 class="subheader">${item.text}</h4>`;
+                } else {
+                    itemsHtml += `
+                        <div class="info-tile" style="background-image: url('${item.image || ''}')">
+                            <span class="info-tile-text">${item.text || ''}</span>
+                        </div>
+                    `;
+                }
+            });
+        
             return `
                 <div class="info-tiles-wrapper">
+                    ${headerHtml}
                     <div class="info-tiles-container">
-                        ${data.map(item => `
-                            <div class="info-tile" style="background-image: url('${item.image}')">
-                                <span class="info-tile-text">${item.text}</span>
-                            </div>
-                        `).join('')}
+                        ${itemsHtml}
                     </div>
                 </div>
             `;
         }
     
-        recyclableElement.innerHTML = `
-            <h3 class="recyclable-title">${translations[currentLanguage].recyclableTitle}</h3>
-            ${createItemElements(translations[currentLanguage].recyclableData[item])}
+        let recyclableContent = `
+            <h3 class="recyclable-title">${translations[currentLanguage].recyclableTitle || ''}</h3>
         `;
     
+        if (item === 'electronics') {
+            recyclableContent += `
+                <p class="electronics-info">${translations[currentLanguage].electronicsInfo || ''}</p>
+            `;
+        }
+    
+        recyclableContent += createItemElements(translations[currentLanguage].recyclableData[item] || []);
+    
+        recyclableElement.innerHTML = recyclableContent;
+    
         nonRecyclableElement.innerHTML = `
-            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle}</h3>
-            ${createItemElements(translations[currentLanguage].nonRecyclableData[item])}
+            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
+            ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
         `;
     }
 

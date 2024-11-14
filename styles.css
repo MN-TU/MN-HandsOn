@@ -203,6 +203,25 @@
   width: 100%;
 }
 
+.subheader {
+  font-size: 1.2em;
+  color: #2c3e50;
+  text-align: center;
+  padding: 4px 5px;
+  margin: 15px 0;
+  background-color: #ecf0f1;
+  border-left: 5px solid #3498db;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.subheader:hover {
+  background-color: #e8f6ff;
+  border-left-color: #2980b9;
+  transform: translateX(5px);
+}
+
 .recyclable-title,
 .non-recyclable-title {
     font-size: 1.6em;
