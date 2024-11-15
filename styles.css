@@ -131,6 +131,14 @@
     border-radius: 4px;
   }
 
+  .info-text1, .info-text2 {
+      display: none;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e8f5e9;
+      border-radius: 4px;
+  }
+
   /* Footer styles */
   .main-footer {
     background-color: #333;
