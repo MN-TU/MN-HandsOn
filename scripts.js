@@ -267,13 +267,31 @@ document.addEventListener('DOMContentLoaded', function () {
     
         recyclableContent += createItemElements(translations[currentLanguage].recyclableData[item] || []);
     
-        recyclableElement.innerHTML = recyclableContent;
-    
-        nonRecyclableElement.innerHTML = `
-            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
-            ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
+        // Add the new row for recyclable items (paper, plastic, glass, metal)
+        if (['paper', 'plastic', 'glass', 'metal'].includes(item)) {
+            recyclableContent += `
+                <div class="disposal-instruction blue-bin">
+                    <h4>Dispose in Blue Bin</h4>
+                </div>
         `;
     }
+
+        recyclableElement.innerHTML = recyclableContent;
+    
+        let nonRecyclableContent = `
+        <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
+        ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
+    `;
+
+    // Add the new row for non-recyclable items (all types)
+    nonRecyclableContent += `
+        <div class="disposal-instruction green-bin">
+            <h4>Dispose in Green Bin</h4>
+        </div>
+    `;
+
+    nonRecyclableElement.innerHTML = nonRecyclableContent;
+}
 
     // Event listeners for language buttons
     document.getElementById('lang-en').addEventListener('click', function () {

@@ -342,3 +342,38 @@
 .title-container {
     position: relative;
 }
+
+.disposal-instruction {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.disposal-instruction:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.disposal-instruction h4 {
+    margin: 0;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+.blue-bin {
+    background-color: #2977ab;
+    border: 2px solid #2980b9;
+}
+
+.green-bin {
+    background-color: #06421f;
+    border: 2px solid #27ae60;
+}
