@@ -79,6 +79,7 @@
     align-items: center;
     justify-content: center;
     color: white; /* Ensure text is visible on the background */
+    text-shadow: 2px 2px black; /* Create a black outline */
     background-size: cover; /* Cover the entire tile */
     background-position: center; /* Center the image */
   }
