@@ -314,12 +314,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (item === 'electronics') {
         recyclableContent += `
             <div class="disposal-instruction e-bin">
-                <h4>Place recyclable regulated electronic waste in e-Bin</h4>
+                <h4>Place recyclable electronic wastes in e-Bin</h4>
             </div>
             <div class="bin-content-container e-bin-content">
                 <div class="bin-image-wrapper">
                     <div class="bin-image-container">
                         <img src="images/Main/e-bin.png" alt="e-Bin" class="bin-image">
+                        <img src="images/Main/RE e-bin.jpg" alt=" Regulated waste e-Bin" class="bin-image">
+                        <img src="images/Main/RE e-bin1.jpg" alt="Regulated waste e-Bin1" class="bin-image">
+                        <img src="images/Main/RE e-bin2.jpg" alt="Regulated waste e-Bin2" class="bin-image">
                     </div>
                 </div>
             </div>

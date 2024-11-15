@@ -539,14 +539,24 @@
 }
 
 .e-bin-content .bin-image-container {
-    width: 300px; /* Adjust this value to match the blue bin image size */
-    height: 200px; /* Adjust this value to match the blue bin image size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .e-bin-content .bin-image {
-    width: 100%;
-    height: 100%;
+    width: calc(50% - 5px);  /* Adjust this value to control image size */
+    height: auto;
     object-fit: contain;
+    max-height: 200px;  /* Adjust this value as needed */
+}
+
+@media (max-width: 768px) {
+    .e-bin-content .bin-image {
+        width: 100%;
+    }
 }
 
 .e-bin .bin-caption-container {
