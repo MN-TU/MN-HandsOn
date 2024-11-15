@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <img src="images/Main/textile bin.jpg" alt="Textile Bin" class="bin-image">
                 </div>
                 <div class="bin-caption">
-                    <p>Click here to find out where are these bins located!</p>
+                    <p>Click here to find out where the bins are located!</p>
                 </div>
             </div>
         `;

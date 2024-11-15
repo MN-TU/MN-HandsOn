@@ -388,16 +388,33 @@
 
 .bin-image-container {
     width: 100%;
-    padding: 15px;
-    margin-top: 10px;
+    padding: 0px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.bin-image-wrapper {
+    flex: 0 0 40%;  /* Adjust this value to control the width of the image side */
     text-align: center;
 }
 
 .bin-image {
-    max-width: 80%;  /* Adjust this value as needed */
-    height: auto;
-    max-height: 200px;  /* Adjust this value as needed */
-    object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.bin-caption {
+  flex: 0 0 55%;  /* Adjust this value to control the width of the caption side */
+  padding: 5px;
+}
+
+.bin-caption p {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: #333;
+  line-height: 1.5;
 }
 
 /* Media query for smaller screens */
