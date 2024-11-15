@@ -413,6 +413,18 @@
   margin-top: 10px;
 }
 
+/* Specific styles for the blue bin */
+.blue-bin-content .bin-image-container {
+    width: 300px; /* Adjust this value to increase the size */
+    height: 200px; /* Adjust this value to increase the size */
+}
+
+.blue-bin-content .bin-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This ensures the entire image is visible */
+}
+
 .bin-caption {
   max-width: 600px; /* Adjust this value as needed */
   padding: 10px;
@@ -474,5 +486,19 @@
     .bin-image {
         max-width: 95%;
         max-height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blue-bin-content .bin-image-container {
+        width: 250px; /* Slightly smaller on mobile devices */
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blue-bin-content .bin-image-container {
+        width: 200px; /* Even smaller on very small devices */
+        height: 200px;
     }
 }

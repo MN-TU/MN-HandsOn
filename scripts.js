@@ -282,10 +282,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div class="bin-caption-container">
                     <div class="bin-caption">
-                        <p>HDB estates: In open areas that are easily accessible, such as near carparks. They are not located at void decks for fire safety reasons.
+                        <p><strong>In open areas that are easily accessible, such as near carparks.
                         <a href="https://www.nea.gov.sg/our-services/waste-management/waste-collection-systems" class="caption-link">
                             Click HERE to find out where the bins are located!
-
+                            </p>
                     </div>
                 </div>
             `;
