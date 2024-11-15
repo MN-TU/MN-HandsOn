@@ -52,7 +52,7 @@
   }
   
   .main-title {
-    font-size: 2.7em;
+    font-size: 4em;
     margin-bottom: 10px;
   }
   
@@ -79,6 +79,7 @@
     align-items: center;
     justify-content: center;
     color: white; /* Ensure text is visible on the background */
+    text-shadow: 2px 2px black; /* Create a black outline */
     background-size: cover; /* Cover the entire tile */
     background-position: center; /* Center the image */
   }
@@ -130,6 +131,14 @@
     border-radius: 4px;
   }
 
+  .info-text1, .info-text2 {
+      display: none;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e8f5e9;
+      border-radius: 4px;
+  }
+
   /* Footer styles */
   .main-footer {
     background-color: #333;
@@ -145,7 +154,7 @@
   }
 
   #intro-text {
-    font-size: 1.5em; /* Increase font size */
+    font-size: 2em; /* Increase font size */
     margin-top: 10px; /* Optional: add some spacing */
   }
 
@@ -311,7 +320,7 @@
 .about-button-container {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 80px;
     z-index: 10;
 }
 
@@ -321,7 +330,7 @@
   background-color: rgba(29, 164, 76, 0.8); /* Semi-transparent blue */
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }

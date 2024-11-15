@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Hide info boxes on page load
+    document.getElementById('recyclable').style.display = 'none';
+    document.getElementById('non-recyclable').style.display = 'none';
+    
     const recyclingInfo = document.getElementById('recycling-info');
     const pageElements = {
         pageTitle: document.getElementById('page-title'),
@@ -12,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const translations = {
         en: {
             pageTitle: "Recycling Info Guide",
-            introText: "Find out which items are recyclable!",
+            introText: "Not sure which items are recyclable? Find out below!",
             items: {
                 paper: "Paper",
                 plastic: "Plastic",
@@ -159,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         zh: {
             pageTitle: "回收信息指南",
-            introText: "了解哪些物品可以回收！",
+            introText: "不确定哪些物品可以回收？在下方查看！",
             items: {
                 paper: "纸",
                 plastic: "塑料",
@@ -221,6 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const recyclableElement = document.getElementById('recyclable');
         const nonRecyclableElement = document.getElementById('non-recyclable');
     
+        // Show the info boxes
+        recyclableElement.style.display = 'block';
+        nonRecyclableElement.style.display = 'block';
+
         function createItemElements(data) {
             let html = '';
         
@@ -281,6 +289,12 @@ document.addEventListener('DOMContentLoaded', function () {
         tile.addEventListener('click', function () {
             const item = tile.getAttribute('data-item');
             selectedItem = item;
+            
+            // Hide all info boxes
+            document.getElementById('recyclable').style.display = 'none';
+            document.getElementById('non-recyclable').style.display = 'none';
+            
+            // Update info and show boxes for the clicked item
             updateRecyclingInfo(item);
             
             // Remove greyed-out class from all tiles
