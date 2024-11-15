@@ -321,8 +321,11 @@ document.addEventListener('DOMContentLoaded', function () {
     nonRecyclableContent += `
         <div class="disposal-instruction green-bin">
             <h4>${translations[currentLanguage].disposeInGreenBin || 'Dispose in Green Bin'}</h4>
-            <div class="bin-content-container">
+
+        </div>
+                    
                 <div class="bin-image-wrapper">
+                    <div class="bin-image-container">
                     <img src="images/Main/green bin.jpg" alt="Green Bin" class="bin-image">
                 </div>
                 <div class="bin-caption-container">
@@ -330,7 +333,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     </a>
                 </div>
             </div>
-        </div>
     `;
 
     nonRecyclableElement.innerHTML = nonRecyclableContent;
