@@ -276,6 +276,23 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
+    // Add the new row for textile
+    if (item === 'textile') {
+        recyclableContent += `
+            <div class="disposal-instruction textile-bin">
+                <h4>Dispose in Textile Bin</h4>
+            </div>
+            <div class="bin-image-container">
+                <div class="bin-image-wrapper">
+                    <img src="images/Main/textile bin.jpg" alt="Textile Bin" class="bin-image">
+                </div>
+                <div class="bin-caption">
+                    <p>Click here to find out where are these bins located!</p>
+                </div>
+            </div>
+        `;
+    }
+
         recyclableElement.innerHTML = recyclableContent;
     
         let nonRecyclableContent = `
