@@ -381,8 +381,8 @@
 }
 
 .green-bin {
-    background-color: #2ecc71;
-    border: 2px solid #27ae60;
+    background-color: #f0f1e9;
+    border: 2px solid #f0f1e9;
 }
 
 .bin-image-container {
@@ -425,7 +425,8 @@
     object-fit: contain; /* This ensures the entire image is visible */
 }
 
-.bin-caption {
+.blue-bin .bin-caption,
+.green-bin .bin-caption {
   max-width: 600px; /* Adjust this value as needed */
   padding: 10px;
   background-color: #f0f0f0;
@@ -442,7 +443,8 @@
     transition: transform 0.3s ease; /* Only transition the transform property */
 }
 
-.caption-link p {
+.blue-bin.caption-link p,
+.green-bin.caption-link p {
     margin: 0;
     font-weight: bold; /* If the hovered state had bold text */
 }
@@ -494,3 +496,4 @@
         height: 200px;
     }
 }
+

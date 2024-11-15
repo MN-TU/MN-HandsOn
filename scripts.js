@@ -313,13 +313,23 @@ document.addEventListener('DOMContentLoaded', function () {
     
         let nonRecyclableContent = `
         <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
-        ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
     `;
 
-    // Add the new row for non-recyclable items (all types)
+    nonRecyclableContent += createItemElements(translations[currentLanguage].nonRecyclableData[item] || []);
+
+    // Add the new row for non-recyclable items (all categories)
     nonRecyclableContent += `
         <div class="disposal-instruction green-bin">
-            <h4>Dispose in Green Bin</h4>
+            <h4>${translations[currentLanguage].disposeInGreenBin || 'Dispose in Green Bin'}</h4>
+            <div class="bin-content-container">
+                <div class="bin-image-wrapper">
+                    <img src="images/Main/green bin.jpg" alt="Green Bin" class="bin-image">
+                </div>
+                <div class="bin-caption-container">
+                    <p><strong>You may dispose them as general waste.</p>
+                    </a>
+                </div>
+            </div>
         </div>
     `;
 
