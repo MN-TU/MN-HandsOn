@@ -271,23 +271,42 @@ document.addEventListener('DOMContentLoaded', function () {
         if (['paper', 'plastic', 'glass', 'metal'].includes(item)) {
             recyclableContent += `
                 <div class="disposal-instruction blue-bin">
-                    <h4>Dispose in Blue Bin</h4>
+                    <h4>Place recyclables in Blue Bin</h4>
                 </div>
-        `;
-    }
+                <div class="bin-content-container blue-bin-content">
+                    <div class="bin-image-wrapper">
+                        <div class="bin-image-container">
+                            <img src="images/Main/blue bin.jpg" alt="Blue Bin" class="bin-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="bin-caption-container">
+                    <div class="bin-caption">
+                        <p>HDB estates: In open areas that are easily accessible, such as near carparks. They are not located at void decks for fire safety reasons.
+                        <a href="https://www.nea.gov.sg/our-services/waste-management/waste-collection-systems" class="caption-link">
+                            Click HERE to find out where the bins are located!
+
+                    </div>
+                </div>
+            `;
+        }
 
     // Add the new row for textile
     if (item === 'textile') {
         recyclableContent += `
             <div class="disposal-instruction textile-bin">
-                <h4>Dispose in Textile Bin</h4>
+                <h4>Place recyclables in Textile Bin</h4>
             </div>
-            <div class="bin-image-container">
+            <div class="bin-content-container">
                 <div class="bin-image-wrapper">
-                    <img src="images/Main/textile bin.jpg" alt="Textile Bin" class="bin-image">
+                    <div class="bin-image-container">
+                        <img src="images/Main/textile bin.jpg" alt="Textile Bin" class="bin-image">
+                    </div>
                 </div>
-                <div class="bin-caption">
-                    <p>Click here to find out where the bins are located!</p>
+                <div class="bin-caption-container">
+                    <a href="https://www.google.com/maps/d/viewer?mid=1lC9ANeqb5ik94u7oZEtkccG-k4iCFaE&ll=1.358088337051256%2C103.82508924999999&z=11" class="caption-link">
+                        <p><strong>Click HERE to find out where the bins are located!</p>
+                    </a>
                 </div>
             </div>
         `;
