@@ -52,7 +52,7 @@
   }
   
   .main-title {
-    font-size: 2.7em;
+    font-size: 4em;
     margin-bottom: 10px;
   }
   
@@ -145,7 +145,7 @@
   }
 
   #intro-text {
-    font-size: 1.5em; /* Increase font size */
+    font-size: 2em; /* Increase font size */
     margin-top: 10px; /* Optional: add some spacing */
   }
 
