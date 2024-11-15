@@ -202,8 +202,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update tile texts
         document.querySelectorAll('.item-tile').forEach(tile => {
             const item = tile.getAttribute('data-item');
-            tile.textContent = translations[lang].items[item];
-        });
+            const translatedText = translations[lang].items[item];
+            tile.querySelector('.info-tile-text').textContent = translatedText;
+          });
 
         // Update language button styles
         document.getElementById('lang-en').classList.toggle('active', lang === 'en');
@@ -242,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     html += `
                         <div class="info-tile" style="background-image: url('${item.image || ''}')">
-                            <span class="info-tile-text">${item.text || ''}</span>
+                            <span class="item-tile-text">${item.text || ''}</span>
                         </div>
                     `;
                 }
@@ -313,14 +314,26 @@ document.addEventListener('DOMContentLoaded', function () {
     
         let nonRecyclableContent = `
         <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
-        ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
     `;
 
-    // Add the new row for non-recyclable items (all types)
+    nonRecyclableContent += createItemElements(translations[currentLanguage].nonRecyclableData[item] || []);
+
+    // Add the new row for non-recyclable items (all categories)
     nonRecyclableContent += `
         <div class="disposal-instruction green-bin">
-            <h4>Dispose in Green Bin</h4>
+            <h4>${translations[currentLanguage].disposeInGreenBin || 'Dispose in Green Bin'}</h4>
+
         </div>
+                    
+                <div class="bin-image-wrapper">
+                    <div class="bin-image-container">
+                    <img src="images/Main/green bin.jpg" alt="Green Bin" class="bin-image">
+                </div>
+                <div class="bin-caption-container">
+                    <p><strong>You may dispose them as general waste.</p>
+                    </a>
+                </div>
+            </div>
     `;
 
     nonRecyclableElement.innerHTML = nonRecyclableContent;
