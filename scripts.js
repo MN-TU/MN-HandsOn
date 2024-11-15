@@ -319,7 +319,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="bin-content-container e-bin-content">
                 <div class="bin-image-wrapper">
                     <div class="bin-image-container">
-                        <img src="images/Main/e-bin.png" alt="e-Bin" class="bin-image">
+                        <img src="images/Main/e-bin1.png" alt="e-Bin1" class="bin-image">
+                        <img src="images/Main/e-bin2.png" alt="e-Bin2" class="bin-image">
+                        <img src="images/Main/e-bin3.png" alt="e-Bin3" class="bin-image">
                         <img src="images/Main/RE e-bin.jpg" alt=" Regulated waste e-Bin" class="bin-image">
                         <img src="images/Main/RE e-bin1.jpg" alt="Regulated waste e-Bin1" class="bin-image">
                         <img src="images/Main/RE e-bin2.jpg" alt="Regulated waste e-Bin2" class="bin-image">
@@ -328,7 +330,10 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="bin-caption-container">
                 <a href="https://alba-ewaste.sg/drop-off-locations/" class="caption-link">
-                    <p><strong>Click HERE to find out where the e-Bins are located!</strong></p>
+                    <p><strong>Click HERE to find out where the regulated e-Bins are located!</strong></p>
+                </a>
+                <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/e-waste-management/where-to-recycle-e-waste" class="caption-link">
+                    <p><strong>Click HERE to find out where the non-regulated e-Bins are located!</strong></p>
                 </a>
             </div>
         `;

@@ -539,23 +539,29 @@
 }
 
 .e-bin-content .bin-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 .e-bin-content .bin-image {
-    width: calc(50% - 5px);  /* Adjust this value to control image size */
-    height: auto;
-    object-fit: contain;
-    max-height: 200px;  /* Adjust this value as needed */
+    width: 200%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-    .e-bin-content .bin-image {
-        width: 100%;
+@media (min-width: 768px) {
+    .e-bin-content .bin-image-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .e-bin-content .bin-image-container {
+        grid-template-columns: repeat(6, 1fr);
     }
 }
 
