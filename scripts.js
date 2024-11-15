@@ -281,12 +281,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
                 <div class="bin-caption-container">
-                    <div class="bin-caption">
-                        <p><strong>In open areas that are easily accessible, such as near carparks.
                         <a href="https://www.nea.gov.sg/our-services/waste-management/waste-collection-systems" class="caption-link">
-                            Click HERE to find out where the bins are located!
-                            </p>
-                    </div>
+                        <p><strong>Click HERE to find out where the bins are located!</strong></p>
+                     </a>
                 </div>
             `;
         }
