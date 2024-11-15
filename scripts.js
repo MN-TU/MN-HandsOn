@@ -267,13 +267,64 @@ document.addEventListener('DOMContentLoaded', function () {
     
         recyclableContent += createItemElements(translations[currentLanguage].recyclableData[item] || []);
     
-        recyclableElement.innerHTML = recyclableContent;
-    
-        nonRecyclableElement.innerHTML = `
-            <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
-            ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
+        // Add the new row for recyclable items (paper, plastic, glass, metal)
+        if (['paper', 'plastic', 'glass', 'metal'].includes(item)) {
+            recyclableContent += `
+                <div class="disposal-instruction blue-bin">
+                    <h4>Place recyclables in Blue Bin</h4>
+                </div>
+                <div class="bin-content-container blue-bin-content">
+                    <div class="bin-image-wrapper">
+                        <div class="bin-image-container">
+                            <img src="images/Main/blue bin.jpg" alt="Blue Bin" class="bin-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="bin-caption-container">
+                        <a href="https://www.nea.gov.sg/our-services/waste-management/waste-collection-systems" class="caption-link">
+                        <p><strong>Click HERE to find out where the bins are located!</strong></p>
+                     </a>
+                </div>
+            `;
+        }
+
+    // Add the new row for textile
+    if (item === 'textile') {
+        recyclableContent += `
+            <div class="disposal-instruction textile-bin">
+                <h4>Place recyclables in Textile Bin</h4>
+            </div>
+            <div class="bin-content-container">
+                <div class="bin-image-wrapper">
+                    <div class="bin-image-container">
+                        <img src="images/Main/textile bin.jpg" alt="Textile Bin" class="bin-image">
+                    </div>
+                </div>
+                <div class="bin-caption-container">
+                    <a href="https://www.google.com/maps/d/viewer?mid=1lC9ANeqb5ik94u7oZEtkccG-k4iCFaE&ll=1.358088337051256%2C103.82508924999999&z=11" class="caption-link">
+                        <p><strong>Click HERE to find out where the bins are located!</p>
+                    </a>
+                </div>
+            </div>
         `;
     }
+
+        recyclableElement.innerHTML = recyclableContent;
+    
+        let nonRecyclableContent = `
+        <h3 class="non-recyclable-title">${translations[currentLanguage].nonRecyclableTitle || ''}</h3>
+        ${createItemElements(translations[currentLanguage].nonRecyclableData[item] || [])}
+    `;
+
+    // Add the new row for non-recyclable items (all types)
+    nonRecyclableContent += `
+        <div class="disposal-instruction green-bin">
+            <h4>Dispose in Green Bin</h4>
+        </div>
+    `;
+
+    nonRecyclableElement.innerHTML = nonRecyclableContent;
+}
 
     // Event listeners for language buttons
     document.getElementById('lang-en').addEventListener('click', function () {
