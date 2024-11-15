@@ -538,3 +538,21 @@
     }
 }
 
+.e-bin-content .bin-image-container {
+    width: 300px; /* Adjust this value to match the blue bin image size */
+    height: 200px; /* Adjust this value to match the blue bin image size */
+}
+
+.e-bin-content .bin-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.e-bin .bin-caption-container {
+    max-width: 600px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

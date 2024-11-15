@@ -310,6 +310,27 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 
+    // Add the new row for electronics
+    if (item === 'electronics') {
+        recyclableContent += `
+            <div class="disposal-instruction e-bin">
+                <h4>Place recyclable regulated electronic waste in e-Bin</h4>
+            </div>
+            <div class="bin-content-container e-bin-content">
+                <div class="bin-image-wrapper">
+                    <div class="bin-image-container">
+                        <img src="images/Main/e-bin.png" alt="e-Bin" class="bin-image">
+                    </div>
+                </div>
+            </div>
+            <div class="bin-caption-container">
+                <a href="https://alba-ewaste.sg/drop-off-locations/" class="caption-link">
+                    <p><strong>Click HERE to find out where the e-Bins are located!</strong></p>
+                </a>
+            </div>
+        `;
+}
+
         recyclableElement.innerHTML = recyclableContent;
     
         let nonRecyclableContent = `
