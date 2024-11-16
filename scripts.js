@@ -54,17 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateLanguage(lang) {
         currentLanguage = lang;
-        pageElements.pageTitle.textContent = translations[lang].pageTitle;
-        pageElements.introText.textContent = translations[lang].introText;
-        
-        const items = translations[lang].items;
-        for (const key in items) {
-            const element = document.getElementById(key);
-            if (element) {
-                element.textContent = items[key];
+        document.querySelectorAll('[data-translate-key]').forEach(element => {
+            const key = element.getAttribute('data-translate-key');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
             }
-        }
-
+        });
         // Update other language-specific elements
         //document.getElementById('unable-to-find').textContent = translations[lang].unableToFind;
 
@@ -193,11 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p><strong>${translations[currentLanguage].binCaption.greenBin}</strong></p>
                 </div>
                 </div>
-            <div class="bin-caption-container">
-                <a href="https://www.nea.gov.sg/recycling-search-engine" class="caption-link">
-                    <p><strong>${translations[currentLanguage].unableToFind}</strong></p>
-                </a>
-            </div>
         `;
     
         nonRecyclableElement.innerHTML = nonRecyclableContent;

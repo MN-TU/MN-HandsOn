@@ -16,10 +16,10 @@ const translations = {
         recyclableTitle: "Yes, these are recyclable!",
         nonRecyclableTitle: "No, these are NOT recyclable!",
         disposalInstructions: {
-            blueBin: "Place recyclables in <span class='bin-text blue-bin-text'>Blue Bin</span>",
-            textileBin: "Place recyclables in <span class='bin-text textile-bin-text'>Textile Bin</span>",
-            eBin: "Place recyclable electronic wastes in <span class='bin-text e-bin-text'>e-Bin</span>",
-            greenBin: "Dispose in <span class='bin-text green-bin-text'>Green Bin</span>",
+            blueBin: "Place recyclables in Blue Bin",
+            textileBin: "Place recyclables in Textile Bin",
+            eBin: "Place recyclable electronic wastes in e-Bin",
+            greenBin: "Dispose in Green Bin",
         },
         unableToFind: "Unable to find the item? Click HERE to find out more!",
         
@@ -181,10 +181,10 @@ const translations = {
         recyclableTitle: "是的，这些是可回收的！",
         nonRecyclableTitle: "不，这些不可回收！",
         disposalInstructions: {
-            blueBin: "请将可回收物品放入<span class='bin-text blue-bin-text'>蓝色回收箱</span>",
-            textileBin: "请将可回收物品放入<span class='bin-text textile-bin-text'>纺织品回收箱</span>",
-            eBin: "请将可回收的电子废弃物放入<span class='bin-text e-bin-text'>电子回收箱</span>",
-            greenBin: "请将可回收物品放入<span class='bin-text green-bin-text'>绿色回收箱</span>",
+            blueBin: "请将可回收物品放入蓝色回收箱",
+            textileBin: "请将可回收物品放入纺织品回收箱",
+            eBin: "请将可回收的电子废弃物放入电子回收箱",
+            greenBin: "请将可回收物品放入绿色回收箱",
         },
         unableToFind: "找不到物品？点击此处了解更多！",
 
