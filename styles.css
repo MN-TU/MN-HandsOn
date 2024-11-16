@@ -173,7 +173,7 @@
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     margin-top: 40px;
   }
 
@@ -386,17 +386,34 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
-    color: #27ae60; 
+    color: #121213; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    background-color: #f8f8f3;
 }
 
 .disposal-instruction:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: none; /* Remove the scale effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Keep the original box-shadow */
+}
+
+.disposal-instruction::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #151515; /* Black underline color */
+  transition: width 0.3s ease;
+}
+
+.disposal-instruction:hover::after {
+  width: 100%;
 }
 
 .disposal-instruction h4 {
@@ -436,7 +453,7 @@
 .bin-image {
   max-width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 250px;
   object-fit: cover;
   display: block;
 }
@@ -460,10 +477,12 @@
     width: 100%;
     height: 100%;
     object-fit: contain; /* This ensures the entire image is visible */
+    border-radius: 8px;
 }
 
 .blue-bin .bin-caption-container,
-.green-bin .bin-caption-container {
+.green-bin .bin-caption-container,
+.e-bin .bin-caption-container {
   max-width: 600px; /* Adjust this value as needed */
   padding: 10px;
   background-color: #f0f0f0;
@@ -479,18 +498,21 @@
 
 .caption-link,
 .blue-bin-content .caption-link,
-.green-bin-content .caption-link {
+.green-bin-content .caption-link,
+.e-bin-content .caption-link {
     display: block;
     text-decoration: none;
     color: inherit;
     background-color: #f0f0f0; /* Same as hovered state */
     padding: 10px; /* Adjust as needed */
     transition: transform 0.3s ease; /* Only transition the transform property */
+    text-align: center;
 }
 
 .caption-link:hover,
 .blue-bin-content .caption-link:hover,
-.green-bin-content .caption-link:hover {
+.green-bin-content .caption-link:hover,
+.e-bin-content .caption-link:hover {
     transform: scale(1.05); /* Or whatever scale factor you were using */
 }
 
@@ -544,6 +566,7 @@
     gap: 10px;
     justify-content: center;
     padding: 10px 0;
+    background-color: transparent;
 }
 
 .e-bin-content .bin-image {
@@ -556,19 +579,46 @@
 @media (min-width: 768px) {
     .e-bin-content .bin-image-container {
         grid-template-columns: repeat(3, 1fr);
+        background-color: transparent;
     }
 }
 
 @media (min-width: 1024px) {
     .e-bin-content .bin-image-container {
         grid-template-columns: repeat(6, 1fr);
+        background-color: transparent;
     }
 }
 
-.e-bin .bin-caption-container {
-    max-width: 600px;
-    padding: 10px;
-    background-color: #f0f0f0;
+.disposal-instruction.unable-to-find {
+    padding: 0;
+    border: 2px solid e1f1df; /* Green border */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the border radius applies to the background */
+}
+
+.unable-to-find-caption-link {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent; /* Green background */
+    color: rgb(15, 15, 15); /* Black text */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.unable-to-find-caption-link:hover {
+    background-color: #e1f1df; /* Green on hover */
+    transform: scale(1.05);
+}
+
+.unable-to-find-caption-link h5 {
+    margin: 0;
+    font-size: 1.0em;
+    font-weight: bold;
+}
+
+/* Remove the underline effect for this section */
+.disposal-instruction.unable-to-find::after {
+    display: none;
 }

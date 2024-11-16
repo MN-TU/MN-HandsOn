@@ -318,9 +318,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="bin-content-container e-bin-content">
                 <div class="bin-image-wrapper">
                     <div class="bin-image-container">
-                        <img src="images/Main/e-bin1.png" alt="e-Bin1" class="bin-image">
-                        <img src="images/Main/e-bin2.png" alt="e-Bin2" class="bin-image">
-                        <img src="images/Main/e-bin3.png" alt="e-Bin3" class="bin-image">
+                        <img src="images/Main/e-bin1.jpg" alt="e-Bin1" class="bin-image">
+                        <img src="images/Main/e-bin2.jpg" alt="e-Bin2" class="bin-image">
+                        <img src="images/Main/e-bin3.jpg" alt="e-Bin3" class="bin-image">
                         <img src="images/Main/RE e-bin.jpg" alt=" Regulated waste e-Bin" class="bin-image">
                         <img src="images/Main/RE e-bin1.jpg" alt="Regulated waste e-Bin1" class="bin-image">
                         <img src="images/Main/RE e-bin2.jpg" alt="Regulated waste e-Bin2" class="bin-image">
@@ -359,7 +359,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div class="bin-caption-container">
                     <p><strong>You may dispose them as general waste.</p>
-                    </a>
                 </div>
             </div>
     `;
@@ -408,4 +407,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set the initial language on page load
     updateLanguage(currentLanguage);
-});
+})
