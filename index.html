@@ -4,71 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Recycling Info Guide</title>
+  <title data-translate-key="pageTitle">Recycling Info Guide</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4TKXT55H8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-P4TKXT55H8');
-  </script>
+    <script src="scripts.js" type="module"></script>
 </head>
 <body>
   <div class="container">
     <header class="main-header">
       <nav class="language-nav">
-        <button id="lang-en" class="lang-btn active">English</button>
-        <button id="lang-zh" class="lang-btn">中文</button>
+        <button id="lang-en" class="lang-btn active" data-translate-key="langEn">English</button>
+        <button id="lang-zh" class="lang-btn" data-translate-key="langZh">中文</button>
       </nav>
       <div class="header-content">
-        <h1 id="page-title" class="main-title">Recycling Info Guide</h1>
-        <p id="intro-text" class="intro">Not sure which items are recyclable? Find out below!</p>
+        <h1 id="page-title" class="main-title" data-translate-key="pageTitle">Recycling Info Guide</h1>
+        <p id="intro-text" class="intro" data-translate-key="introText">Not sure which items are recyclable? Find out below!</p>
       </div>
     </header>
 
     <main class="content">
       <div class="items-container">
         <div class="item-tile" data-item="paper">
-          <span class="info-tile-text">Paper</span>
+          <span class="info-tile-text" data-translate-key="paper">Paper</span>
         </div>
         <div class="item-tile" data-item="plastic">
-          <span class="info-tile-text">Plastic</span>
+          <span class="info-tile-text" data-translate-key="plastic">Plastic</span>
         </div>
         <div class="item-tile" data-item="glass">
-          <span class="info-tile-text">Glass</span>
+          <span class="info-tile-text" data-translate-key="glass">Glass</span>
         </div>
         <div class="item-tile" data-item="metal">
-          <span class="info-tile-text">Metal</span>
+          <span class="info-tile-text" data-translate-key="metal">Metal</span>
         </div>
         <div class="item-tile" data-item="textile">
-          <span class="info-tile-text">Textile</span>
+          <span class="info-tile-text" data-translate-key="textile">Textile</span>
         </div>
         <div class="item-tile" data-item="electronics">
-          <span class="info-tile-text">Electronics</span>
+          <span class="info-tile-text" data-translate-key="electronics">Electronics</span>
         </div>
       </div>
       <div id="recyclable" class="info-text1"></div>
       <div id="non-recyclable" class="info-text2"></div>
       <div class="about-button-container">
-        <a href="aboutme.html" class="about-button">About Me</a>
-    </div>
-        <div class="disposal-instruction unable-to-find">
-            <a href="https://www.nea.gov.sg/recycling-search-engine" class="unable-to-find-caption-link">
-                <h5>Unable to find the item? Click HERE to find out more!</h5>
-            </a>
-        </div>
+        <a href="aboutme.html" class="about-button" data-translate-key="aboutMe">About Me</a>
+      </div>
     </main>
 
     <footer class="main-footer">
-      <p>Disclaimer: This web application and its recycling information guide were created as a learning project and should be used for educational purposes only.</p>
-      <p>Last updated on: 18 November 2024</p>
+      <p data-translate-key="disclaimer">Disclaimer: This web application and its recycling information guide were created as a learning project and should be used for educational purposes only.</p>
+      <p data-translate-key="lastUpdated">Last updated on: 18 November 2024</p>
     </footer>
   </div>
-  <script src="scripts.js"></script>
+
 </body>
 </html>
