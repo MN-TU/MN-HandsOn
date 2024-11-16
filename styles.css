@@ -393,6 +393,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    background-color: #f8f8f3;
 }
 
 .disposal-instruction:hover {
@@ -407,7 +408,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #151515; /* Green underline color */
+  background-color: #151515; /* Black underline color */
   transition: width 0.3s ease;
 }
 
