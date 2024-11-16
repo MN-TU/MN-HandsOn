@@ -361,11 +361,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p><strong>You may dispose them as general waste.</p>
                 </div>
             </div>
-
-    
-            <div class="unable-to-find">
-            <h4>${translations[currentLanguage].unableToFind || 'Unable to find the item? Click <a href="https://www.nea.gov.sg/recycling-search-engine" class="unable-to-find-caption-link">HERE</a> to find out more!'}</h4>
-        </div>             
     `;
 
     nonRecyclableElement.innerHTML = nonRecyclableContent;

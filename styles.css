@@ -589,3 +589,35 @@
     }
 }
 
+.disposal-instruction.unable-to-find {
+    padding: 0;
+    border: 2px solid e1f1df; /* Green border */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the border radius applies to the background */
+}
+
+.unable-to-find-caption-link {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent; /* Green background */
+    color: rgb(15, 15, 15); /* Black text */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.unable-to-find-caption-link:hover {
+    background-color: #e1f1df; /* Green on hover */
+    transform: scale(1.05);
+}
+
+.unable-to-find-caption-link h5 {
+    margin: 0;
+    font-size: 1.0em;
+    font-weight: bold;
+}
+
+/* Remove the underline effect for this section */
+.disposal-instruction.unable-to-find::after {
+    display: none;
+}
