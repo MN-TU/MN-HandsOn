@@ -173,7 +173,7 @@
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     margin-top: 40px;
   }
 
@@ -386,17 +386,33 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
-    color: #27ae60; 
+    color: #121213; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .disposal-instruction:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: none; /* Remove the scale effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Keep the original box-shadow */
+}
+
+.disposal-instruction::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #151515; /* Green underline color */
+  transition: width 0.3s ease;
+}
+
+.disposal-instruction:hover::after {
+  width: 100%;
 }
 
 .disposal-instruction h4 {
@@ -436,7 +452,7 @@
 .bin-image {
   max-width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 250px;
   object-fit: cover;
   display: block;
 }
@@ -481,7 +497,8 @@
 
 .caption-link,
 .blue-bin-content .caption-link,
-.green-bin-content .caption-link {
+.green-bin-content .caption-link,
+.e-bin-content .caption-link {
     display: block;
     text-decoration: none;
     color: inherit;
@@ -561,11 +578,13 @@
 @media (min-width: 768px) {
     .e-bin-content .bin-image-container {
         grid-template-columns: repeat(3, 1fr);
+        background-color: transparent;
     }
 }
 
 @media (min-width: 1024px) {
     .e-bin-content .bin-image-container {
         grid-template-columns: repeat(6, 1fr);
+        background-color: transparent;
     }
 }
