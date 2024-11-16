@@ -359,9 +359,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div class="bin-caption-container">
                     <p><strong>You may dispose them as general waste.</p>
-                    </a>
                 </div>
             </div>
+
+    
+            <div class="unable-to-find">
+            <h4>${translations[currentLanguage].unableToFind || 'Unable to find the item? Click <a href="https://www.nea.gov.sg/recycling-search-engine" class="unable-to-find-caption-link">HERE</a> to find out more!'}</h4>
+        </div>             
     `;
 
     nonRecyclableElement.innerHTML = nonRecyclableContent;
@@ -408,4 +412,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set the initial language on page load
     updateLanguage(currentLanguage);
-});
+})
