@@ -261,7 +261,7 @@
 }
 
 .subheader {
-  font-size: 1.2em;
+  font-size: 1.6em;
   color: #2c3e50;
   text-align: center;
   padding: 4px 5px;
@@ -385,7 +385,7 @@
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.6em;
     color: #121213; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -514,6 +514,13 @@
 .green-bin-content .caption-link:hover,
 .e-bin-content .caption-link:hover {
     transform: scale(1.05); /* Or whatever scale factor you were using */
+}
+
+.bin-caption-container p {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* Media query for smaller screens */
