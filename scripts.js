@@ -81,9 +81,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
         function createItemElements(data) {
             let html = '';
+            let isElectronics = data.some(item => item.text === "Regulated Electronics Waste" || item.text === "受管制电子废弃物");
+        
+            if (isElectronics) {
+                html += `<h3 class="recyclable-subtitle"></h3>`;
+            }
+        
             data.forEach(item => {
                 if (item.isHeader) {
-                    html += `<h4 class="subheader">${item.text}</h4>`;
+                    html += `<div class="subheader-row full-width"><h4 class="subheader">${item.text}</h4></div>`;
                 } else {
                     html += `
                         <div class="info-tile" style="background-image: url('${item.image}')">
