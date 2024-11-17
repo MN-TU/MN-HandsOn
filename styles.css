@@ -170,8 +170,8 @@
 
   /* Footer styles */
   .main-footer {
-    background-color: #333;
-    color: white;
+    background-color: white;
+    color: rgb(32, 32, 32);
     text-align: justify;
     padding: 10px 20px;
     margin-top: 40px;
