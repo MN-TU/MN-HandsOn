@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('lang-zh').addEventListener('click', function () {
         updateLanguage('zh');
+
+    });
+
+    document.getElementById('lang-ms').addEventListener('click', function () {
+        updateLanguage('ms');
+    });
+    document.getElementById('lang-ta').addEventListener('click', function () {
+        updateLanguage('ta');
     });
 
     // Add click event listeners to tiles
@@ -193,9 +201,11 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="bin-caption-container">
                         <p><strong>${translations[currentLanguage].binCaption.greenBin}</strong></p>
                 </div>
-                </div>
+            <div class="bin-caption-container">
+                <p><strong>${translations[currentLanguage].binCaption.greenBin}</strong></p>
+            </div>
         `;
     
         nonRecyclableElement.innerHTML = nonRecyclableContent;
     }
-});
+})
