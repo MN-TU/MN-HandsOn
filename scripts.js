@@ -72,9 +72,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //document.getElementById('unable-to-find').textContent = translations[lang].unableToFind;
 
         // Update language button styles
-        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-        document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
-
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+            });
+        });
         // Update the recycling info if an item is selected
         if (selectedItem) {
             updateRecyclingInfo(selectedItem);
@@ -201,9 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="bin-caption-container">
                         <p><strong>${translations[currentLanguage].binCaption.greenBin}</strong></p>
                 </div>
-            <div class="bin-caption-container">
-                <p><strong>${translations[currentLanguage].binCaption.greenBin}</strong></p>
-            </div>
         `;
     
         nonRecyclableElement.innerHTML = nonRecyclableContent;
